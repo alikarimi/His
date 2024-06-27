@@ -1,3 +1,6 @@
+using His.DataAccess.Context;
+using Microsoft.EntityFrameworkCore;
+
 namespace His.Presentation.Web
 {
     public class Program
@@ -8,6 +11,9 @@ namespace His.Presentation.Web
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddDbContext<HisContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             var app = builder.Build();
 

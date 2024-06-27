@@ -11,6 +11,10 @@ namespace His.Domain.Doctor
         public static int WorkingDayStartHour = 8;
         public static int WorkingDayEndHour = 16;
 
+        protected Schedule()
+        {
+        }
+
         public Schedule(TimeSlot timeSlot, Guid doctorId)
         {
             TimeSlot = timeSlot;
